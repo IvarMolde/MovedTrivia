@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MovedTrivia – Arbeidsnorsk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Hopp til innhold</a>
+
+  <header class="site-header" role="banner">
+    <img src="assets/logo.png" alt="MovedTrivia logo" class="site-logo" />
+    <p class="site-tagline">Lær norsk arbeidsliv – ett spørsmål om gangen</p>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── SETUP SCREEN ── -->
+    <section id="screen-setup" class="screen active" aria-labelledby="setup-heading">
+      <h1 id="setup-heading" class="screen-title">Velg innstillinger</h1>
+
+      <div class="setup-grid">
+
+        <!-- Spillmodus -->
+        <fieldset class="card setup-card" aria-required="true">
+          <legend class="card-label">Spillmodus</legend>
+          <div class="radio-group" role="group" aria-label="Velg antall spillere">
+            <label class="radio-tile">
+              <input type="radio" name="mode" value="1" checked />
+              <span class="radio-icon" aria-hidden="true">🧑</span>
+              <span class="radio-text">1 Spiller</span>
+            </label>
+            <label class="radio-tile">
+              <input type="radio" name="mode" value="2" />
+              <span class="radio-icon" aria-hidden="true">🧑‍🤝‍🧑</span>
+              <span class="radio-text">2 Spillere</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Vanskelighetsgrad -->
+        <fieldset class="card setup-card" aria-required="true">
+          <legend class="card-label">Vanskelighetsgrad</legend>
+          <div class="radio-group difficulty-group" role="group" aria-label="Velg vanskelighetsgrad">
+            <label class="radio-tile diff-easy">
+              <input type="radio" name="difficulty" value="easy" checked />
+              <span class="radio-icon" aria-hidden="true">🌱</span>
+              <span class="radio-text">Lett</span>
+              <span class="diff-desc">Grunnleggende ord og uttrykk</span>
+            </label>
+            <label class="radio-tile diff-medium">
+              <input type="radio" name="difficulty" value="medium" />
+              <span class="radio-icon" aria-hidden="true">⚡</span>
+              <span class="radio-text">Middels</span>
+              <span class="diff-desc">Arbeidslivets regler og rutiner</span>
+            </label>
+            <label class="radio-tile diff-hard">
+              <input type="radio" name="difficulty" value="hard" />
+              <span class="radio-icon" aria-hidden="true">🔥</span>
+              <span class="radio-text">Vanskelig</span>
+              <span class="diff-desc">Rettigheter, kontrakter og kultur</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Antall spørsmål -->
+        <fieldset class="card setup-card" aria-required="true">
+          <legend class="card-label">Antall spørsmål</legend>
+          <div class="radio-group count-group" role="group" aria-label="Velg antall spørsmål">
+            <label class="radio-tile count-tile">
+              <input type="radio" name="count" value="5" checked />
+              <span class="radio-text">5</span>
+            </label>
+            <label class="radio-tile count-tile">
+              <input type="radio" name="count" value="10" />
+              <span class="radio-text">10</span>
+            </label>
+            <label class="radio-tile count-tile">
+              <input type="radio" name="count" value="15" />
+              <span class="radio-text">15</span>
+            </label>
+            <label class="radio-tile count-tile">
+              <input type="radio" name="count" value="20" />
+              <span class="radio-text">20</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Kategori -->
+        <fieldset class="card setup-card" aria-required="true">
+          <legend class="card-label">Kategori</legend>
+          <div class="radio-group category-group" role="group" aria-label="Velg kategori">
+            <label class="radio-tile cat-tile">
+              <input type="radio" name="category" value="all" checked />
+              <span class="radio-icon" aria-hidden="true">🎲</span>
+              <span class="radio-text">Alle</span>
+            </label>
+            <label class="radio-tile cat-tile">
+              <input type="radio" name="category" value="rettigheter" />
+              <span class="radio-icon" aria-hidden="true">⚖️</span>
+              <span class="radio-text">Rettigheter</span>
+            </label>
+            <label class="radio-tile cat-tile">
+              <input type="radio" name="category" value="kommunikasjon" />
+              <span class="radio-icon" aria-hidden="true">💬</span>
+              <span class="radio-text">Kommunikasjon</span>
+            </label>
+            <label class="radio-tile cat-tile">
+              <input type="radio" name="category" value="hms" />
+              <span class="radio-icon" aria-hidden="true">🦺</span>
+              <span class="radio-text">HMS</span>
+            </label>
+            <label class="radio-tile cat-tile">
+              <input type="radio" name="category" value="lonn" />
+              <span class="radio-icon" aria-hidden="true">💰</span>
+              <span class="radio-text">Lønn & økonomi</span>
+            </label>
+            <label class="radio-tile cat-tile">
+              <input type="radio" name="category" value="kultur" />
+              <span class="radio-icon" aria-hidden="true">🤝</span>
+              <span class="radio-text">Arbeidskultur</span>
+            </label>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button id="btn-start" class="btn btn-primary btn-large" aria-label="Start spillet med valgte innstillinger">
+        Start spillet
+      </button>
+    </section>
+
+    <!-- ── GAME SCREEN ── -->
+    <section id="screen-game" class="screen" aria-labelledby="game-heading" aria-live="polite">
+
+      <!-- Spillhode -->
+      <div class="game-header">
+        <div class="player-indicator" id="player-indicator" aria-live="assertive" aria-atomic="true"></div>
+        <div class="progress-wrap" role="group" aria-label="Fremgang">
+          <span class="progress-label" id="progress-label" aria-live="polite"></span>
+          <div class="progress-bar-track" aria-hidden="true">
+            <div class="progress-bar-fill" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="scores" aria-live="polite" aria-atomic="true">
+          <span class="score-badge" id="score-p1" aria-label="Spiller 1 poeng"></span>
+          <span class="score-badge score-badge-p2" id="score-p2" aria-label="Spiller 2 poeng"></span>
+        </div>
+      </div>
+
+      <!-- Tidtaker -->
+      <div class="timer-wrap" aria-live="assertive" aria-atomic="true">
+        <svg class="timer-ring" viewBox="0 0 64 64" aria-hidden="true">
+          <circle class="timer-track" cx="32" cy="32" r="28" />
+          <circle class="timer-arc"  cx="32" cy="32" r="28" id="timer-arc" />
+        </svg>
+        <span class="timer-number" id="timer-number" aria-label="Tid igjen"></span>
+      </div>
+
+      <!-- Spørsmål -->
+      <div class="question-card card" id="question-card">
+        <div class="question-meta">
+          <span class="category-chip" id="q-category" aria-label="Kategori"></span>
+          <span class="difficulty-chip" id="q-difficulty" aria-label="Vanskelighetsgrad"></span>
+        </div>
+        <p class="question-text" id="question-text" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
+      <!-- Svaralternativer -->
+      <div class="answers-grid" id="answers-grid" role="list" aria-label="Svaralternativer"></div>
+
+      <!-- Feedback -->
+      <div class="feedback-bar" id="feedback-bar" aria-live="assertive" aria-atomic="true" role="alert"></div>
+
+    </section>
+
+    <!-- ── RESULT SCREEN ── -->
+    <section id="screen-result" class="screen" aria-labelledby="result-heading">
+      <div class="result-inner">
+        <div class="result-trophy" aria-hidden="true" id="result-trophy"></div>
+        <h2 id="result-heading" class="result-title"></h2>
+        <p class="result-subtitle" id="result-subtitle"></p>
+
+        <div class="result-scores-wrap" id="result-scores-wrap" aria-label="Endelig poengsum"></div>
+
+        <div class="result-actions">
+          <button class="btn btn-primary" id="btn-play-again">Spill igjen</button>
+          <button class="btn btn-secondary" id="btn-new-settings">Endre innstillinger</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>MovedTrivia &copy; 2026 &nbsp;|&nbsp; Laget for voksenopplæringen</p>
+  </footer>
+
+  <script src="questions.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
