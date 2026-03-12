@@ -31,19 +31,19 @@ const QUESTIONS = [
   },
   {
     id: "r-e-4", category: "rettigheter", difficulty: "easy",
-    question: "Hva heter organisasjonen som hjelper arbeidstakere med rettigheter i Norge?",
+    question: "Hva heter det statlige tilsynet som hjelper arbeidstakere med rettigheter i Norge?",
     options: ["NAV", "LO (Landsorganisasjonen)", "Skatteetaten", "Arbeidstilsynet"],
     answer: 3,
     explanation: "Arbeidstilsynet er det statlige tilsynsorganet som passer på at arbeidsmiljøloven følges."
   },
   {
     id: "r-e-5", category: "rettigheter", difficulty: "easy",
-    question: "Hva er 'oppsigelsestid'?",
+    question: "Hva er en 'oppsigelsestid'?",
     options: [
       "Tiden du jobber overtid",
       "Tiden mellom oppsigelse og siste arbeidsdag",
-      "Tiden du kan ta pause",
-      "Tiden du er sykmeldt"
+      "Tiden du kan ta pause på arbeid",
+      "Tiden du er sykmeldt fra legen"
     ],
     answer: 1,
     explanation: "Oppsigelsestid er perioden fra du eller arbeidsgiver sier opp arbeidsforholdet til den siste arbeidsdagen."
@@ -51,21 +51,21 @@ const QUESTIONS = [
   {
     id: "r-e-6", category: "rettigheter", difficulty: "easy",
     question: "Har du rett til å ta pauser i løpet av arbeidsdagen?",
-    options: ["Nei, bare under lunsj", "Ja, loven gir rett til hvile og pauser", "Bare hvis sjefen tillater det", "Kun etter 10 timers arbeid"],
+    options: ["Nei, bare under lunsj på hverdagene", "Ja, loven gir rett til hvile og pauser om du jobber mer enn 5,5 timer", "Bare hvis sjefen tillater det", "Kun etter 10 timers arbeid"],
     answer: 1,
     explanation: "Arbeidsmiljøloven sikrer arbeidstakere rett til pauser og hvile i løpet av arbeidsdagen."
   },
   {
     id: "r-e-7", category: "rettigheter", difficulty: "easy",
     question: "Hva kalles det når du jobber mer enn normal arbeidstid?",
-    options: ["Deltid", "Overtid", "Tillegg", "Ekstra"],
+    options: ["Deltid", "Overtid", "Supertid", "Minustid"],
     answer: 1,
     explanation: "Overtid er arbeid utover den avtalte arbeidstiden. Du har krav på ekstra betaling for overtid."
   },
   {
     id: "r-e-8", category: "rettigheter", difficulty: "easy",
     question: "Hva er normal arbeidstid per uke i Norge?",
-    options: ["30 timer", "35 timer", "37,5 timer", "40 timer"],
+    options: ["30 timer", "35 timer", "45 timer", "40 timer"],
     answer: 3,
     explanation: "Den normale arbeidstiden i Norge er 40 timer per uke, men mange tariffavtaler gir 37,5 timer."
   },
@@ -73,12 +73,12 @@ const QUESTIONS = [
   // MEDIUM
   {
     id: "r-m-1", category: "rettigheter", difficulty: "medium",
-    question: "Hva inneholder en arbeidskontrakt? Velg det BESTE svaret.",
+    question: "Hva inneholder en arbeidskontrakt? Velg det mest PRESISE svaret.",
     options: [
-      "Kun lønn og stillingstittel",
+      "Kun lønn, skatteprosent og stillingstittel",
       "Arbeidsoppgaver, lønn, arbeidstid og oppsigelsestid",
-      "Bare oppsigelsestid",
-      "Kun start- og sluttdato"
+      "Bare oppsigelsestid og navn på familiemedlemmer",
+      "Kun start- og sluttdato på hverdager"
     ],
     answer: 1,
     explanation: "En fullstendig arbeidskontrakt skal inneholde informasjon om arbeidsoppgaver, lønn, arbeidstid, oppsigelsestid og mer."
@@ -87,10 +87,10 @@ const QUESTIONS = [
     id: "r-m-2", category: "rettigheter", difficulty: "medium",
     question: "Hva er 'sykepenger' i Norge?",
     options: [
-      "Penger du betaler til legen",
+      "Penger du betaler til legen etter eb undersøkelse",
       "Penger du får fra NAV eller arbeidsgiver når du er syk",
-      "En forsikring du kjøper selv",
-      "Penger du sparer til pensjon"
+      "En forsikring du kjøper selv i et privat forsikringsselskap",
+      "Penger du sparer til pensjon etter du er blitt 67 år gammel"
     ],
     answer: 1,
     explanation: "Sykepenger er en ytelse som sikrer inntekt når du er sykemeldt. Arbeidsgiveren betaler de første 16 dagene, deretter betaler NAV."
@@ -98,7 +98,7 @@ const QUESTIONS = [
   {
     id: "r-m-3", category: "rettigheter", difficulty: "medium",
     question: "Hva er den lengste perioden du kan motta sykepenger fra NAV?",
-    options: ["6 måneder", "9 måneder", "12 måneder", "52 uker"],
+    options: ["6 måneder", "9 måneder", "26  uker", "52 uker"],
     answer: 3,
     explanation: "Du kan motta sykepenger fra NAV i inntil 52 uker (ett år) i løpet av en treårsperiode."
   },
@@ -106,10 +106,10 @@ const QUESTIONS = [
     id: "r-m-4", category: "rettigheter", difficulty: "medium",
     question: "Hva er 'tariffavtale'?",
     options: [
-      "En skatteavtale mellom land",
+      "En skatteavtale mellom land som importerer varer",
       "En kollektiv avtale mellom fagforening og arbeidsgiver om lønns- og arbeidsvilkår",
-      "En personlig kontrakt mellom deg og sjefen",
-      "En reiseplan for jobben"
+      "En personlig kontrakt mellom deg og sjefen som handler om lønn og skatt",
+      "En reiseplan for jobben for de ansatte som skal på sommerferie"
     ],
     answer: 1,
     explanation: "En tariffavtale er en kollektiv avtale som regulerer lønns- og arbeidsvilkår for en gruppe arbeidstakere."
@@ -118,10 +118,10 @@ const QUESTIONS = [
     id: "r-m-5", category: "rettigheter", difficulty: "medium",
     question: "Hva skjer hvis arbeidsgiveren din ikke betaler lønn?",
     options: [
-      "Du må bare vente",
+      "Du må bare vente til sjefen har tid til å betale lønn",
       "Du kan kontakte Arbeidstilsynet og eventuelt ta saken til retten",
-      "Du mister automatisk jobben",
-      "NAV betaler for deg"
+      "Du mister automatisk jobben, og må finne ny jobb innen 3 måneder",
+      "NAV betaler for deg, slik at du alltid får den lønnen du har rett til"
     ],
     answer: 1,
     explanation: "Hvis arbeidsgiver ikke betaler lønn, kan du kontakte Arbeidstilsynet. Du kan også ta saken til Forliksrådet eller domstolen."
@@ -147,11 +147,11 @@ const QUESTIONS = [
   },
   {
     id: "r-m-8", category: "rettigheter", difficulty: "medium",
-    question: "Hva er 'egenmelding'?",
+    question: "Hva er en egenmelding'?",
     options: [
       "En rapport til sjefen om jobben din",
       "Selvrapportert sykefravær uten legeerklæring",
-      "En søknad om ferie",
+      "En søknad om ferie om sommeren",
       "En klage til Arbeidstilsynet"
     ],
     answer: 1,
@@ -163,10 +163,10 @@ const QUESTIONS = [
     id: "r-h-1", category: "rettigheter", difficulty: "hard",
     question: "Hva er formålet med arbeidsmiljøloven (aml)?",
     options: [
-      "Å bestemme skattenivået for arbeidstakere",
+      "Å bestemme skattenivået for arbeidstakere som har fast jobb i Norge",
       "Å sikre trygge arbeidsforhold og verne arbeidstakernes helse og rettigheter",
-      "Å regulere import og eksport av varer",
-      "Å bestemme pensjonsalderen"
+      "Å regulere import og eksport av varer til alle bedriftene",
+      "Å bestemme pensjonsalderen for de ansatte i private bedrifter"
     ],
     answer: 1,
     explanation: "Arbeidsmiljøloven skal sikre trygge arbeidsforhold, ivareta arbeidstakernes helse og velferd, og fremme likebehandling i arbeidslivet."
@@ -175,10 +175,10 @@ const QUESTIONS = [
     id: "r-h-2", category: "rettigheter", difficulty: "hard",
     question: "Hva er forskjellen mellom fast ansettelse og midlertidig ansettelse?",
     options: [
-      "Fast ansettelse er alltid bedre betalt",
+      "Fast ansettelse er alltid bedre betalt enn midlertidig arbeid",
       "Fast ansettelse er uten sluttdato, midlertidig har en bestemt periode",
-      "Midlertidig ansettelse gir mer ferie",
-      "Det er ingen juridisk forskjell"
+      "Midlertidig ansettelse gir mer ferie om sommeren",
+      "Det er ingen juridisk forskjell mellom de to ansettelsesformene"
     ],
     answer: 1,
     explanation: "Fast ansettelse betyr at du jobber uten en fastsatt sluttdato. Midlertidig ansettelse har en bestemt periode og er kun lovlig i spesielle tilfeller."
@@ -187,9 +187,9 @@ const QUESTIONS = [
     id: "r-h-3", category: "rettigheter", difficulty: "hard",
     question: "Hva betyr 'vern mot usaklig oppsigelse'?",
     options: [
-      "Du kan aldri bli sagt opp",
+      "Du kan aldri bli sagt opp når du har fast jobb",
       "Arbeidsgiver må ha en god og saklig grunn for å si deg opp",
-      "Du kan si opp uten grunn",
+      "Du kan si opp uten grunn for oppsigelsen",
       "Oppsigelse er kun mulig etter 5 år"
     ],
     answer: 1,
@@ -199,9 +199,9 @@ const QUESTIONS = [
     id: "r-h-4", category: "rettigheter", difficulty: "hard",
     question: "Hva er 'diskriminering' i arbeidslivet?",
     options: [
-      "Å gi noen ekstra ferie",
+      "Å gi noen ekstra ferie hvis de har jobbet mye eller fått gode resultater",
       "Å behandle noen urettferdig på grunn av kjønn, alder, religion, etnisitet eller funksjonshemming",
-      "Å gi ulike arbeidsoppgaver til ulike folk",
+      "Å gi ulike arbeidsoppgaver til ulike folk uten å ta hensyn til kvalifikasjoner",
       "Å ansette folk med erfaring fremfor uten erfaring"
     ],
     answer: 1,
@@ -211,10 +211,10 @@ const QUESTIONS = [
     id: "r-h-5", category: "rettigheter", difficulty: "hard",
     question: "Hva er 'fortrinnsrett' for arbeidstakere?",
     options: [
-      "Retten til å velge arbeidstid",
+      "Retten til å velge arbeidstid på hverdager og i helgene",
       "Retten til å bli ansatt igjen i samme bedrift etter oppsigelse ved nedbemanning",
-      "Retten til ekstra lønn etter 5 år",
-      "Retten til å nekte overtid"
+      "Retten til ekstra lønn etter 5 år fordi man da skal ha ekstra lønnsbonus",
+      "Retten til å nekte overtid grunnet dårlig helse eller vanskelig familielogistikk"
     ],
     answer: 1,
     explanation: "Arbeidstakere som er sagt opp på grunn av nedbemanning har fortrinnsrett til ny stilling i bedriften i ett år etter oppsigelsestidens utløp."
@@ -231,18 +231,18 @@ const QUESTIONS = [
   // EASY
   {
     id: "k-e-1", category: "kommunikasjon", difficulty: "easy",
-    question: "Hva sier du til kollegaene dine første gang du møter dem?",
+    question: "Hva kan du si du til kollegaene dine første gang du møter dem?",
     options: ["Ingenting, du bare begynner å jobbe", "Hei, jeg heter [navn]. Hyggelig å møte dere!", "Beklager, kan du hjelpe meg?", "Ha det bra!"],
     answer: 1,
     explanation: "I Norge er det vanlig å presentere seg med navn og si det er hyggelig å møte nye kolleger."
   },
   {
     id: "k-e-2", category: "kommunikasjon", difficulty: "easy",
-    question: "Hva gjør du hvis du ikke forstår hva sjefen sier?",
+    question: "Hva kan du gjøre hvis du ikke forstår hva sjefen sier?",
     options: [
-      "Later som du forstår",
+      "Later som du forstår, og bare sier "ja"",
       "Ber sjefen om å forklare igjen eller snakke langsommere",
-      "Gå hjem",
+      "Går hjem og øve mer på norskferdighetene",
       "Spør en kollega uten å si noe til sjefen"
     ],
     answer: 1,
@@ -252,53 +252,53 @@ const QUESTIONS = [
     id: "k-e-3", category: "kommunikasjon", difficulty: "easy",
     question: "Hva er et 'møte' på jobben?",
     options: [
-      "En type arbeidsoppgave",
+      "En type arbeidsoppgave på lageret",
       "En samling der kolleger diskuterer arbeid",
-      "En pause fra jobben",
-      "En form for betaling"
+      "En pause fra jobben hvor man snakker om helga",
+      "En form for betaling uten skatt"
     ],
     answer: 1,
     explanation: "Et møte er når to eller flere kolleger samles for å diskutere, planlegge eller ta beslutninger om jobbrelaterte temaer."
   },
   {
     id: "k-e-4", category: "kommunikasjon", difficulty: "easy",
-    question: "Hva er riktig måte å si 'takk' i profesjonell sammenheng på norsk?",
-    options: ["Takk så mye!", "Jo", "Mmm", "Javel"],
+    question: "Hva er høflig måte å si 'takk' i profesjonell sammenheng på norsk?",
+    options: ["Tusen takk!", "Jo", "Mmm", "Javel"],
     answer: 0,
-    explanation: "'Takk så mye!' eller bare 'Takk!' er høflige og vanlige måter å uttrykke takknemlighet i norsk arbeidsliv."
+    explanation: "'Tusen takk!' eller bare 'Takk!' er høflige og vanlige måter å uttrykke takknemlighet i norsk arbeidsliv."
   },
   {
     id: "k-e-5", category: "kommunikasjon", difficulty: "easy",
-    question: "Hva gjør du hvis du kommer for sent til jobben?",
+    question: "Hva bør du gjøre hvis du kommer for sent til jobben?",
     options: [
-      "Ingenting, det er ikke viktig",
+      "Ingenting, det er ikke viktig om du kommer for sent",
       "Varsler arbeidsgiveren/sjefen og forklarer hvorfor",
-      "Sender en melding til en kollega",
-      "Kommer bare når du kan"
+      "Sender en melding til en kollega, og ber han snakke med sjefen",
+      "Kommer bare når du kan, slik at det ikke blir så mye stress"
     ],
     answer: 1,
-    explanation: "I Norge er det viktig å varsle sjefen hvis du kommer for sent. Du kan si: 'Beklager, jeg er forsinket fordi...' eller sende en melding."
+    explanation: "I Norge er det viktig å varsle sjefen hvis du kommer for sent. Du kan ringe og si: 'Beklager, jeg er forsinket fordi...' eller sende en melding."
   },
   {
     id: "k-e-6", category: "kommunikasjon", difficulty: "easy",
-    question: "Hva betyr 'arbeidsplan' eller 'vaktplan'?",
+    question: "Hva er en 'arbeidsplan' eller 'vaktplan'?",
     options: [
-      "En plan for ferieturer",
+      "En plan for ferieturer for de ansatte",
       "En oversikt over når du og kollegene dine skal jobbe",
       "En beskrivelse av arbeidsoppgavene dine",
-      "En kontrakt med arbeidsgiveren"
+      "En kontrakt med arbeidsgiveren og de ansatte"
     ],
     answer: 1,
     explanation: "En arbeidsplan eller vaktplan viser hvilke dager og tider du skal jobbe. Det er viktig å sjekke planen regelmessig."
   },
   {
     id: "k-e-7", category: "kommunikasjon", difficulty: "easy",
-    question: "Hva er 'tilbakemelding' i jobbsammenheng?",
+    question: "Hva er en 'tilbakemelding' i jobbsammenheng?",
     options: [
-      "En type betaling",
+      "En type betaling for utført arbeid",
       "Kommentarer om hvordan du gjør jobben din",
-      "En forespørsel om ferie",
-      "En rapport til myndighetene"
+      "En forespørsel om påskeferie",
+      "En rapport til myndighetene om inntekt og lønn"
     ],
     answer: 1,
     explanation: "Tilbakemelding er kommentarer fra sjefen eller kolleger om det du gjør. Positiv tilbakemelding betyr at du gjør det bra, konstruktiv tilbakemelding hjelper deg å bli bedre."
@@ -307,10 +307,10 @@ const QUESTIONS = [
     id: "k-e-8", category: "kommunikasjon", difficulty: "easy",
     question: "Hva betyr det å 'melde fra' om noe på jobben?",
     options: [
-      "Å gå hjem tidlig",
+      "Å gå hjem tidlig på fredager",
       "Å informere sjefen eller kolleger om noe viktig",
-      "Å skrive en klage",
-      "Å be om ekstra lønn"
+      "Å skrive en klage til sjefen eller en kollega",
+      "Å be om ekstra lønn når man er ferdig med arbeidet"
     ],
     answer: 1,
     explanation: "Å melde fra betyr å informere om noe. For eksempel: 'Jeg melder fra om at jeg er syk' eller 'Jeg melder fra om en feil i maskinen.'"
@@ -319,12 +319,12 @@ const QUESTIONS = [
   // MEDIUM
   {
     id: "k-m-1", category: "kommunikasjon", difficulty: "medium",
-    question: "Hvordan skriver du en profesjonell e-post til sjefen på norsk?",
+    question: "Hvordan kan man skrive en profesjonell e-post til sjefen på norsk?",
     options: [
-      "Hei! Vil ha fri fredag :)",
+      "Hei! Vil ha fri fredag denne uken og neste uke :)",
       "Hei [navn], Jeg skriver for å spørre om... Med vennlig hilsen [ditt navn]",
-      "Yo! Kan jeg få fri?",
-      "Kjære direktør, jeg søker herved om..."
+      "Yo! Kan jeg få fri noen dager i neste uke. Jeg skal slappe av.",
+      "Kjære direktør, jeg søker herved om.. Stor klem fra ...."
     ],
     answer: 1,
     explanation: "En profesjonell e-post starter med 'Hei [navn],' og avsluttes med 'Med vennlig hilsen [ditt navn]'. Tonen er vennlig men respektfull."
@@ -335,7 +335,7 @@ const QUESTIONS = [
     options: [
       "Kollegaer er konkurrenter; samarbeid er å konkurrere",
       "Kollegaer er medarbeidere; samarbeid er å jobbe godt sammen",
-      "Kollegaer er sjefer; samarbeid er å følge ordre",
+      "Kollegaer er sjefen; samarbeid er å følge ordre",
       "Kollegaer er kunder; samarbeid er salg"
     ],
     answer: 1,
@@ -343,48 +343,48 @@ const QUESTIONS = [
   },
   {
     id: "k-m-3", category: "kommunikasjon", difficulty: "medium",
-    question: "Hva gjør du i et jobbintervju for å vise at du er interessert?",
+    question: "Hva bør man gjøre i et jobbintervju for å vise at du er interessert?",
     options: [
       "Sitter stille og svarer bare på spørsmål",
       "Stiller spørsmål om jobben og viser engasjement",
-      "Forteller kun om lønn og ferie",
-      "Sjekker telefonen underveis"
+      "Spør kun om lønn og ferie for å høre om det er gode vilkår",
+      "Sjekker telefonen underveis, siden det er viktig å vise at man er digital"
     ],
     answer: 1,
     explanation: "I et jobbintervju bør du stille spørsmål om arbeidsoppgaver, teamet og bedriften. Dette viser at du er interessert og forberedt."
   },
   {
     id: "k-m-4", category: "kommunikasjon", difficulty: "medium",
-    question: "Hva er 'medarbeidersamtale'?",
+    question: "Hva er en 'medarbeidersamtale'?",
     options: [
-      "En uformell prat ved kaffemaskinen",
+      "En uformell prat ved kaffemaskinen hvor man kan snakke om løst og fast",
       "Et planlagt møte mellom deg og sjefen for å diskutere arbeidssituasjonen din",
-      "Et møte med alle ansatte",
-      "En lønnsforhandling"
+      "En uformell samtale mellom lederen og den ansatte",
+      "En lønnsforhandling for de ansatte"
     ],
     answer: 1,
-    explanation: "Medarbeidersamtalen er et regelmessig møte mellom deg og lederen din. Dere snakker om trivsel, mål, utvikling og eventuelle utfordringer."
+    explanation: "En medarbeidersamtalen er et  møte mellom deg og lederen din. Dere snakker om trivsel, mål, utvikling og eventuelle utfordringer."
   },
   {
     id: "k-m-5", category: "kommunikasjon", difficulty: "medium",
     question: "Hva betyr 'å gi beskjed' i arbeidslivet?",
     options: [
-      "Å sende en klage",
+      "Å sende en klage til avisen",
       "Å informere noen om noe viktig, for eksempel at du er syk",
-      "Å si fra seg ansvaret",
-      "Å be om høyere lønn"
+      "Å si fra seg ansvaret om noe går galt",
+      "Å be om høyere lønn hvis man er fornøyd med jobben man har gjort"
     ],
     answer: 1,
     explanation: "Å gi beskjed betyr å informere. For eksempel: 'Jeg gir beskjed til sjefen om at jeg er syk i dag.'"
   },
   {
     id: "k-m-6", category: "kommunikasjon", difficulty: "medium",
-    question: "Hva er 'saksliste' i et møte?",
+    question: "Hva er en 'saksliste' i et møte?",
     options: [
-      "En liste over kollegaer",
+      "En liste over kollegaer på arbeidsplassen",
       "En oversikt over temaene som skal diskuteres i møtet",
-      "En liste over arbeidsoppgaver",
-      "Et dokument med regler"
+      "En liste over arbeidsoppgaver til de ansatte",
+      "Et dokument med regler for HMS på arbeidsplassen"
     ],
     answer: 1,
     explanation: "Sakslisten (eller agendaen) viser hvilke temaer som skal tas opp i møtet. Det er lurt å lese sakslisten før møtet."
@@ -394,24 +394,24 @@ const QUESTIONS = [
     question: "Hva er beste praksis ved bruk av mobiltelefon på jobb?",
     options: [
       "Bruk telefonen fritt hele dagen",
-      "Sjekk arbeidsgiverens regler og bruk telefonen privat i pauser",
-      "Aldri bruk telefon på jobb",
+      "Sjekk arbeidsgiverens regler og bruk telefonen",
+      "Aldri bruk telefon på jobb mellom 07.00-15.00",
       "Bruk telefon kun til arbeid"
     ],
     answer: 1,
-    explanation: "Mange arbeidsplasser har regler for mobilbruk. Det er vanlig å sjekke privat telefon i pauser. Følg arbeidsplassens retningslinjer."
+    explanation: "Mange arbeidsplasser har regler for mobilbruk. Følg arbeidsplassens retningslinjer for mobilbruk."
   },
   {
     id: "k-m-8", category: "kommunikasjon", difficulty: "medium",
     question: "Hva betyr 'å si fra om' et problem på arbeidsplassen?",
     options: [
-      "Å ignorere problemet",
+      "Å ignorere problemet og tenke at det går over",
       "Å rapportere eller fortelle om problemet til rett person",
       "Å løse problemet selv uten å si noe",
-      "Å gå hjem"
+      "Å gå hjem hvis man er misfornøyd med noe"
     ],
     answer: 1,
-    explanation: "Å si fra om et problem betyr å rapportere det til sjefen, verneombudet eller kollegaer. Det er viktig for et trygt og godt arbeidsmiljø."
+    explanation: "Å si fra om et problem betyr å rapportere det til sjefen, verneombudet eller kollegaer. Det er viktig for et trygt og godt arbeidsmiljø. Vær alltid høflig."
   },
 
   // HARD
@@ -422,7 +422,7 @@ const QUESTIONS = [
       "Formell er på norsk, uformell er på andre språk",
       "Formell er offisiell kommunikasjon (e-post, rapporter), uformell er hverdagsprat (kaffeprat, SMS til kolleger)",
       "Formell er skriftlig, uformell er alltid muntlig",
-      "Det er ingen forskjell"
+      "Det er ingen forskjell mellom måten man kan kommunisere på"
     ],
     answer: 1,
     explanation: "Formell kommunikasjon inkluderer e-poster, møtereferater og rapporter. Uformell kommunikasjon er daglig prat med kolleger. Begge er viktige på norske arbeidsplasser."
@@ -431,10 +431,10 @@ const QUESTIONS = [
     id: "k-h-2", category: "kommunikasjon", difficulty: "hard",
     question: "Hva menes med 'å varsle' i arbeidslivet?",
     options: [
-      "Å si opp jobben sin",
+      "Å si opp jobben sin før oppsigelsestiden er utgått",
       "Å melde fra om kritikkverdige forhold på arbeidsplassen, som ulovligheter eller farlige situasjoner",
-      "Å varsle om endringer i vaktplanen",
-      "Å ringe sjefen om du er syk"
+      "Å varsle om endringer i vaktplanen før fristen for endringer er utgått",
+      "Å ringe sjefen om du er syk eller om du har andre forhold som gjør at du ikke kan komme på jobb"
     ],
     answer: 1,
     explanation: "Varsling er å si ifra om alvorlige problemer på arbeidsplassen, som fare for liv og helse, diskriminering eller lovbrudd. Arbeidsmiljøloven beskytter varslere."
@@ -445,7 +445,7 @@ const QUESTIONS = [
     options: [
       "Å unngå alle konflikter ved å si ingenting",
       "Å håndtere uenigheter på en konstruktiv og respektfull måte",
-      "Å alltid gi den andre parten rett",
+      "Å alltid gi den andre parten rett, slik at man ikke får problemer",
       "Å sende en klage til Arbeidstilsynet umiddelbart"
     ],
     answer: 1,
@@ -453,24 +453,24 @@ const QUESTIONS = [
   },
   {
     id: "k-h-4", category: "kommunikasjon", difficulty: "hard",
-    question: "Hva inneholder et godt CV (curriculum vitae)?",
+    question: "Hva inneholder en god CV (curriculum vitae)?",
     options: [
-      "Kun bilde og navn",
+      "Kun bilde og navn av den som har laget CVen",
       "Arbeidserfaring, utdanning, ferdigheter og kontaktinformasjon",
-      "Kun lønnsønsker og hobbyer",
-      "En personlig fortelling om livet ditt"
+      "Kun lønnsønsker og hobbyer for jobben man søker på",
+      "En personlig fortelling om livet ditt, både i nåtid og fremtid"
     ],
     answer: 1,
     explanation: "Et godt CV inneholder kontaktinformasjon, arbeidserfaring, utdanning, relevante ferdigheter og gjerne referanser. Hold det ryddig og relevant for stillingen."
   },
   {
     id: "k-h-5", category: "kommunikasjon", difficulty: "hard",
-    question: "Hva er hensikten med en 'søknadstekst' (motivasjonsbrev)?",
+    question: "Hva er hensikten med en 'jobbsøknad'?",
     options: [
       "Å liste opp alle jobber du har hatt",
       "Å forklare hvorfor du søker jobben og hva du kan bidra med",
-      "Å forhandle om lønn",
-      "Å kritisere den forrige arbeidsgiveren"
+      "Å forhandle om lønn, slik at man kan kan selge seg dyrt til arbeidsgiver",
+      "Å kritisere den forrige arbeidsgiveren for å øke sjansen for ny jobb"
     ],
     answer: 1,
     explanation: "I søknadsteksten skriver du om din motivasjon for stillingen, dine relevante erfaringer og hva du kan bidra med. Du bør tilpasse teksten til hver enkelt jobb."
@@ -479,10 +479,10 @@ const QUESTIONS = [
     id: "k-h-6", category: "kommunikasjon", difficulty: "hard",
     question: "Hva betyr 'taushetserklæring' i arbeidslivet?",
     options: [
-      "En avtale om å jobbe stille",
+      "En avtale om å jobbe stille og ikke forstyrre andre kollegaer",
       "En avtale om ikke å dele konfidensiell informasjon fra arbeidsplassen",
-      "En rapport om sykefravær",
-      "En kontrakt om deltidsarbeid"
+      "En rapport om sykefravær og mulighetene for å spare penger",
+      "En kontrakt om deltidsarbeid for nye ansatte i bedriften"
     ],
     answer: 1,
     explanation: "En taushetserklæring (konfidensialitetsavtale) betyr at du ikke skal dele sensitiv informasjon om bedriften eller kundene med andre. Dette er vanlig i mange bransjer."
@@ -504,12 +504,12 @@ const QUESTIONS = [
   },
   {
     id: "h-e-2", category: "hms", difficulty: "easy",
-    question: "Hva er et 'verneutstyr'?",
+    question: "Hva er 'verneutstyr'?",
     options: [
       "Arbeidsklær du velger selv",
       "Utstyr som beskytter deg mot skader på jobben",
-      "Verktøy for å reparere maskiner",
-      "Klær du vasker hjemme"
+      "Verktøy for å reparere maskiner og annet utstyr",
+      "Klær du vasker hjemme som du bruker på jobb og i fritid"
     ],
     answer: 1,
     explanation: "Verneutstyr er utstyr som beskytter deg på jobb, for eksempel hjelm, vernsko, hansker, vernebriller og hørselsvern."
@@ -518,10 +518,10 @@ const QUESTIONS = [
     id: "h-e-3", category: "hms", difficulty: "easy",
     question: "Hva gjør du hvis det oppstår brann på arbeidsplassen?",
     options: [
-      "Prøver å slukke brannen alene",
+      "Prøver å slukke brannen aleneog vise anvar",
       "Aktiverer brannalarm, forlater bygningen og ringer 110",
-      "Lukker dørene og venter",
-      "Henter alle eiendelene dine"
+      "Lukker dørene og venter på at brannvesenet skal komme",
+      "Henter alle eiendelene dine slik at dine ting ikke blir ødelagt"
     ],
     answer: 1,
     explanation: "Ved brann: Aktiver alarmen, evakuer bygningen ordentlig og ring brannvesenet på 110. Ikke risiker livet ditt for materielle ting."
@@ -552,7 +552,7 @@ const QUESTIONS = [
       "Å reparere skaden selv",
       "Å fortelle sjefen eller verneombudet om en ulykke eller skade",
       "Å gå til legen uten å si noe",
-      "Å ignorere skaden"
+      "Å ignorere skaden, og håpe at ting ordner seg"
     ],
     answer: 1,
     explanation: "Alle skader og nestenulykker skal rapporteres til arbeidsgiveren. Dette hjelper bedriften å forebygge fremtidige skader."
@@ -589,8 +589,8 @@ const QUESTIONS = [
     options: [
       "En vurdering av lønnen på arbeidsplassen",
       "En kartlegging av farer og tiltak for å redusere risiko for skade",
-      "En sjekk av om arbeidstakerne er tilfredse",
-      "En rapport til skatteetaten"
+      "En sjekk av om arbeidstakerne er tilfredse med arbeidsmiljøet",
+      "En rapport til skatteetaten om innbealt skatt"
     ],
     answer: 1,
     explanation: "Risikovurdering handler om å identifisere potensielle farer på arbeidsplassen og sette inn tiltak for å hindre ulykker og skader."
@@ -673,9 +673,9 @@ const QUESTIONS = [
     id: "h-h-2", category: "hms", difficulty: "hard",
     question: "Hva er 'mobbing' i arbeidslivet, og hva kan du gjøre hvis du opplever det?",
     options: [
-      "Mobbing er bare et barn-problem. Voksne må tåle det.",
+      "Mobbing er bare et barneproblem. Voksne må tåle det om de skal beholde jobben de har.",
       "Gjentatt negativ behandling, og du kan ta det opp med leder, verneombud eller Arbeidstilsynet",
-      "Mobbing er kun fysisk vold",
+      "Mobbing er kun fysisk vold som er en utfrodring som den ansatte må løse selv",
       "Du kan si opp jobben – det er eneste løsningen"
     ],
     answer: 1,
@@ -714,8 +714,8 @@ const QUESTIONS = [
     options: [
       "Penger du låner fra banken",
       "Penger du får betalt for arbeidet ditt",
-      "En gave fra arbeidsgiveren",
-      "Skatt du betaler til staten"
+      "En gave fra arbeidsgiveren til de ansatte",
+      "Skatt for utført arbeid som du betaler til staten"
     ],
     answer: 1,
     explanation: "Lønn er pengene du mottar fra arbeidsgiveren som betaling for arbeidet du utfører."
@@ -725,7 +725,7 @@ const QUESTIONS = [
     question: "Hva er forskjellen på bruttlønn og nettolønn?",
     options: [
       "Det er ingen forskjell",
-      "Bruttolønn er lønn før skatt; nettolønn er det du faktisk får utbetalt etter skatt",
+      "Bruttolønn er lønn før skatt; nettolønn er det du  får utbetalt etter skatt",
       "Nettolønn er alltid høyere enn bruttolønn",
       "Bruttolønn er for deltidsarbeid, nettolønn er for fulltid"
     ],
@@ -748,9 +748,9 @@ const QUESTIONS = [
     id: "l-e-4", category: "lonn", difficulty: "easy",
     question: "Hva er 'skatt' i Norge?",
     options: [
-      "En avgift du betaler når du handler i utlandet",
+      "En avgift du betaler når du handler varer i utlandet",
       "Penger du betaler til staten basert på inntekten din",
-      "En bot for å komme for sent",
+      "En bot for å komme for sent på jobben",
       "En månedlig avgift til fagforeningen"
     ],
     answer: 1,
@@ -760,10 +760,10 @@ const QUESTIONS = [
     id: "l-e-5", category: "lonn", difficulty: "easy",
     question: "Hva er 'skattekort'?",
     options: [
-      "Et betalingskort fra NAV",
+      "Et betalingskort fra NAV som viser hvor mye lønn du har fått utbetalt",
       "Et dokument som viser hvor mye skatt du skal betale, sendt til arbeidsgiver",
-      "En kvittering for betalt skatt",
-      "Et kort fra banken"
+      "En kvittering for betalt skatt fra forrige år.",
+      "Et kort fra banken som viser at du er en god kunde"
     ],
     answer: 1,
     explanation: "Skattekortet viser skatteprosenten din. Arbeidsgiveren bruker det til å beregne hvor mye skatt som skal trekkes fra lønnen din. Du kan bestille skattekortet hos Skatteetaten."
@@ -772,10 +772,10 @@ const QUESTIONS = [
     id: "l-e-6", category: "lonn", difficulty: "easy",
     question: "Hva er 'feriepenger'?",
     options: [
-      "Ekstra lønn du får som bonus",
+      "Ekstra lønn du får som bonus, og som utbetales i juni",
       "Penger som er spart opp fra forrige år og utbetales i ferien",
       "Penger du sparer selv til ferie",
-      "Et tilskudd fra NAV"
+      "Et tilskudd fra NAV til de som er arbeidsledig"
     ],
     answer: 1,
     explanation: "Feriepenger er 10,2 % (eller mer med tariffavtale) av fjorårets lønn. De utbetales vanligvis i juni/mai før sommerferien."
@@ -784,13 +784,13 @@ const QUESTIONS = [
     id: "l-e-7", category: "lonn", difficulty: "easy",
     question: "Hva er en 'fagforening'?",
     options: [
-      "En butikk for arbeidsklær",
+      "En butikk for arbeidsklær som lager klær til alle bedriftene i Norge",
       "En organisasjon som representerer arbeidstakere og forhandler lønn og rettigheter",
-      "En stat-etat for skatt",
-      "En organisasjon for arbeidsgivere"
+      "En forening som er tilpasset unge som ikke har arbeid",
+      "En organisasjon for arbeidsgivere som ansetter mennesker med ulike utfordringer"
     ],
     answer: 1,
-    explanation: "En fagforening er en organisasjon som jobber for arbeidstakernes interesser. De forhandler lønn og arbeidsvilkår med arbeidsgivere. LO er Norges største fagforeningsforbund."
+    explanation: "En fagforening er en organisasjon som jobber for arbeidstakernes interesser. LO er Norges største fagforeningsforbund."
   },
   {
     id: "l-e-8", category: "lonn", difficulty: "easy",
@@ -799,7 +799,7 @@ const QUESTIONS = [
       "Hver dag",
       "En gang per uke",
       "En eller to ganger per måned",
-      "Hver kvartal"
+      "Hvert kvartal"
     ],
     answer: 2,
     explanation: "I Norge er det vanlig å motta lønn en gang i måneden, ofte ved månedsslutt. Noen arbeidsplasser betaler to ganger i måneden."
